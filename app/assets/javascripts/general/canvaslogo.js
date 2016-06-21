@@ -20,9 +20,9 @@ function drawpath(){
         context.fill();
 
         context.fillStyle = "#fff";
-        context.font = "samll-caps bold 37pt 'Georgia' ";
+        context.font = "small-caps bold 37pt 'Georgia' ";
         context.textAlign = "left" ;
         context.fillText("Time",100,50);
-        context.fillText("Tracker",100,100);
+        context.fillText("Track",100,100);
     }
 }
