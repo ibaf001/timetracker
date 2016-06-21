@@ -8,8 +8,8 @@
        </tr>
   <% @projects.each do |project| %>
        <tr> 
-           <th><%= link_to(project.name, project) %></th>
-           <th><%= link_to(project.company.name, project.company) %></th>
+           <th><%= link_to(project, project) %></th>
+           <th><%= link_to(project.company, project.company) %></th>
        </tr>
   <% end %>
    </tbody>
