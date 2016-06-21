@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620154221) do
+ActiveRecord::Schema.define(version: 20160621130826) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160620154221) do
     t.integer  "default_rate"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "users", force: :cascade do |t|
