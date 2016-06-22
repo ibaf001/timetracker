@@ -1,6 +1,6 @@
+
+
 <h1><%= @company.name %></h1>
-
-
 <% if !@company.projects.empty? %>
 <table>
    <tbody>
@@ -11,6 +11,8 @@
     <%= render partial: "projects/project", collection: @company.projects %>
    </tbody>
 </table>
+<% else %>
+<p>No Projects</p>
 
 <% end %>
 
