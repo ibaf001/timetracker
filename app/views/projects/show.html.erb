@@ -4,8 +4,6 @@
 <p>Default Rate: <%= @project.default_rate %></p>
 <p>Slug: <%= @project.slug %></p>
 
-<p><%= link_to 'All Projects', projects_path %></p>
-
 <% if !@project.works.empty? %>
 <table>
    <tbody>
@@ -16,15 +14,7 @@
        <th>Date/Time</th>
        <th>Hours</th>
      </tr>
-     <% @project.works.each do |work| %>
-     <tr>
-        <td><%= link_to("View", work) %></td>
-        <td><%= work.user %></td>
-        <td><%= work.project %></td>
-        <td><%= work.datetimeperformed.strftime('%m/%d/%Y %H:%M') %></td>
-        <td><%= work.hours %></td>
-     </tr>
-     <% end %>
+    <%= render partial: "works/work", collection: @project.works %>
    </tbody>
 </table>
 <% end %>
