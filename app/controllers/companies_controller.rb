@@ -27,5 +27,19 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def edit
+    @company = Company.find(params[:id])
+  end
+
+  def update
+    @company = Company.find(params[:id])
+    if @company.update(params[:company].permit(:name))
+      flash[:notice] = 'Company Updated'
+      redirect_to @company
+    else
+      render 'edit'
+    end
+  end
+
 
 end
