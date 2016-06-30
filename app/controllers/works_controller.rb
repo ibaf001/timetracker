@@ -18,6 +18,10 @@ class WorksController < ApplicationController
 
   def create
     @work = Work.new(params[:work].permit(:project_id, :user_id, :datetimeperformed, :hours))
+    uploaded_io = params[:doc]
+    File.open(Rails.root.join('public','uploads',uploaded_io.original_filename),'wb') do |file|
+      file.write(uploaded_io)
+    end
     respond_to do |format|
       if @work.save
         format.html {redirect_to @work, notice: 'Work Created'}
